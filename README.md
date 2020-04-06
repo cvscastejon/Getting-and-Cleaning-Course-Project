@@ -1,15 +1,18 @@
 # Getting-and-Cleaning-Course-Project
 Repo containing all files required for the course project: R script, output txt file, README.md and codebook.
 
-===========================================
+
 This repo is made to summarise the information collected in the project "Human Activity Recognition Using Smartphones Dataset" by Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto. 
-===========================================
+
 
 It contains two files:
   run.analysis.R
   tidyData.txt
   
  The file run.analysis.R is an R script tha tcollects the information from the training and data sets from the "Human Activity Recognition Using Smartphones Dataset" and does the following processing:
+ 
+ ATTENTION: Before running the script, make sure you have installed the package dplyr and the the working directory contains all files with the raw data in the format they were unzipped.
+ 
  
  First it reads all the .txt files regarding train and test sets, and also the files with descriptive information:
   features.txt: contains the names of the variables
@@ -34,4 +37,5 @@ The tidyData.txt is the output of the script, and it follows all rules of tidy d
   Variable names are human readable
   There is a row with the names of the variables at the top
   
-  
+To read the output file, use the command:
+>View(read.table("tidyData.txt",header = T))
