@@ -1,6 +1,7 @@
 # Script to generate tidy dataset based on Samsung information
 # Attention: All Samsung files must be in the same directory as working directory to run
-
+# The package dpyr should be installed prior to running the script
+library(dplyr)
 
 # Read all data sets - train and test
 features <- read.table(".\\UCI HAR Dataset\\features.txt")
@@ -58,3 +59,4 @@ tidyData <- group_by(tidyData,Subject, Activity)
 tidyData <- summarise_at(tidyData, names(tidyData2)[1:66], mean)
 # Finally, we generate the txt file with the tidy data data.frame
 write.table(tidyData, "tidyData.txt", row.names = F)
+
